@@ -72,6 +72,18 @@ body{
    background-color: var(--color-dark);
 }
 
+.content-area{
+    flex-direction: column;
+}
+
+.main-content-area{
+    border: 2px solid red;
+}
+
+.sidebar-section{
+    border: 2px solid yellowgreen;
+}
+
 
 @media all and (min-width: 1180px){
     .navbar ul{
@@ -79,5 +91,14 @@ body{
     }
     .navbar ul li{
         flex-grow: 1;
+    }
+    .content-area{
+        flex-direction: row;
+    }
+    .main-content-area{
+        flex: 1 0 0;
+    }
+    .sidebar-section{
+        flex: 0 0 400px;
     }
 }
