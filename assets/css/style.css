@@ -63,6 +63,7 @@ body{
     font-weight: bold;
     padding: 10px;
     display: block;
+    transition: all .4s ease-in-out;
 }
 
 .navbar ul li a:active,
@@ -77,13 +78,60 @@ body{
 }
 
 .main-content-area{
-    border: 2px solid red;
+    margin: 10px;
 }
 
 .sidebar-section{
     border: 2px solid yellowgreen;
 }
 
+/* ################## css of post section ############################# */
+.posts{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.post{
+    margin-bottom: 15px;
+}
+
+.posts img{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+article.post{
+    background-color: var(--color-white);
+}
+
+.post-content{
+    transform: translateY(-10px);
+}
+
+ .post-content h2{
+    text-align: center;
+    text-transform: capitalize;
+    background-color: var(--color-gold);
+    color: var(--color-dark);
+    padding: 20px;
+}
+
+.post-content p{
+    padding: 25px;
+    color: var(--color-dark);
+}
+
+@media all and (min-width: 768px){
+    .posts{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .posts .post{
+        width: 49%;
+    }
+}
 
 @media all and (min-width: 1180px){
     .navbar ul{
@@ -92,7 +140,7 @@ body{
     .navbar ul li{
         flex-grow: 1;
     }
-    .content-area{
+    .content-area,.posts{
         flex-direction: row;
     }
     .main-content-area{
@@ -100,5 +148,20 @@ body{
     }
     .sidebar-section{
         flex: 0 0 400px;
+    }
+    /* .posts{
+        justify-content: space-between;
+    } */
+    .posts .post:nth-child(1), 
+    .posts .post:nth-child(2){
+        width: 49%;
+    }
+    .posts .post:nth-child(3),
+    .posts .post:nth-child(4),
+    .posts .post:nth-child(5){
+       width: 32%;
+    }
+    .posts .post:last-child{
+        width: 100%;
     }
 }
