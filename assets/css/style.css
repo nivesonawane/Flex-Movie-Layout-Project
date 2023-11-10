@@ -93,7 +93,7 @@ body{
 }
 
 .post{
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .posts img{
@@ -123,6 +123,41 @@ article.post{
     color: var(--color-dark);
 }
 
+/* ############### css of watch card ################ */
+.watch-card{
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    margin-bottom: 20px;
+}
+
+.watch-img > img{
+    width: 100%;
+}
+
+.watch-content{
+    padding: 20px;
+    font-weight: bold;
+}
+
+.watch-content h3{
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 32px;
+}
+
+.watch-content h3,.watch-content p{
+    margin-bottom: 15px;
+}
+
+.watch-content p span{
+    margin-right: 10px;
+}
+
+.watch-content a{
+    text-decoration: underline;
+    color: var(--color-white);
+}
+
 @media all and (min-width: 768px){
     .posts{
         flex-direction: row;
@@ -130,6 +165,23 @@ article.post{
     }
     .posts .post{
         width: 49%;
+    }
+    .watch-card{
+        display: flex;
+    }
+    .watch-img{
+        flex: 0 0 400px;
+    }
+    .watch-img > img{
+        height: 100%;
+        object-fit: cover;
+    }
+    .watch-content{
+        align-self: center;
+        padding: 30px;
+    }
+    .watch-card:nth-of-type(2) .watch-img{
+        order: 1;
     }
 }
 
