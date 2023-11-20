@@ -81,9 +81,7 @@ body{
     margin: 10px;
 }
 
-.sidebar-section{
-    border: 2px solid yellowgreen;
-}
+
 
 /* ################## css of post section ############################# */
 .posts{
@@ -220,6 +218,67 @@ article.post{
   justify-content: center;
 }
 
+/* ########### movie gallery css start ################## */
+.gallary-imgs{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -10px;
+}
+
+.gallary-img{
+    height: 350px;
+    flex-grow: 1;
+    margin: 0 0 10px 10px;
+}
+
+.gallary-img a{
+    display: block;
+    height: 100%;
+}
+
+.gallary-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ###################### sidebar section ################### */
+.weget{
+    padding: 10px;
+}
+
+.weget-card{
+    background-color: var(--color-white);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.weget-card h3{
+    margin-bottom: 12px;
+}
+
+.weget-card li{
+    margin-bottom: 5px;
+}
+
+.weget-card a:link,
+.watch-card a:visited{
+  color: var(--color-dark);
+  font-weight: 700;
+  padding-left: 10px;
+}
+/* ################# footer section ################ */
+.footer{
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+
 @media all and (min-width: 768px){
     .posts{
         flex-direction: row;
@@ -256,9 +315,37 @@ article.post{
     .download-link,.download-rating{
       flex: 0 0 200px;
     }
+
+    /* gallary-img 1 5 9 >> 250px
+    gallary-img 2 6 10 >> 325px
+    gallary-img 3 7 >> 180px
+    gallary-img 4 8 >> 420px */
+
+    /* .gallary-img:nth-child(1),
+    .gallary-img:nth-child(5),
+    .gallary-img:nth-child(9){
+        flex-basis: 250px;
+    } */
+
+    .gallary-img:nth-child(4n + 1){
+        flex-basis: 250px;
+    }
+    .gallary-img:nth-child(4n + 2){
+        flex-basis: 325px;
+    }
+    .gallary-img:nth-child(4n + 3){
+        flex-basis: 180px;
+    }
+    .gallary-img:nth-child(4n + 4){
+        flex-basis: 420px;
+    }
+
 }
 
 @media all and (min-width: 1180px){
+    .main-content-area,.weget{
+        padding: 20px;
+    }
     .navbar ul{
         display: flex;
     }
